@@ -3,15 +3,17 @@ import * as cron from 'node-cron';
 
 @Injectable()
 export class DailyTaskService {
+  private readonly cronSchedule = process.env.CRON_SCHEDULE
+    ? process.env.CRON_SCHEDULE
+    : '00 00 00 * * *'; //default CRON_SCHEDULE | task run every day at 00:00.00 (everyday)
+
   constructor() {
-    // Schedule the task to run every day at 3:30 PM
-    cron.schedule('16 15 * * *', () => {
-      this.performDailyTask();
+    cron.schedule(this.cronSchedule, () => {
+      this.scheduledSendMail();
     });
   }
 
-  private async performDailyTask() {
-    // Your daily task logic here
+  private async scheduledSendMail() {
     const dateNow = new Date();
     console.log('Daily task executed at ' + dateNow);
   }
