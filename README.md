@@ -23,11 +23,11 @@
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
   
 ## Installation
-1. create ```.env``` file by following .env.example
-2. run ```$ yarn install ```
+1. ```$ yarn install ```
+2. create ```.env``` file by following .env.example
 
-### cron patterns
-```
+```bash
+#cron patterns
 * * * * * *
 | | | | | |
 | | | | | day of week
@@ -36,15 +36,13 @@
 | | hours
 | minutes
 seconds (optional)
-Some sample cron patterns are:
 ```
-example
+Some sample cron patterns are:
 - ```* * * * * *```	every second
 - ```45 * * * * *```	every minute, on the 45th second
 - ```0 10 * * * *```	every hour, at the start of the 10th minute
 - ```0 */30 9-17 * * *```	every 30 minutes between 9am and 5pm
 - ```0 30 11 * * 1-5```	Monday to Friday at 11:30am
-
 
 ## Running the app
 
@@ -74,13 +72,14 @@ $ yarn run test:cov
 
 ## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Please note that using your Gmail password directly is not recommended for security reasons. It's a better practice to generate an app-specific password for your application to use. To generate an app-specific password, you can follow these steps:
+1. Go to your Google Account settings: https://myaccount.google.com/
+2. In the left navigation panel, click on "Security."
+3. Under "Signing in to Google," click on "App passwords."
+4. Sign in with your Google account password if prompted.
+5. In the "App passwords" section, select "Mail" for the "Select app" dropdown and "Other (Custom name)" for the "Select device" dropdown.
+6. Enter a custom name for your app (e.g., "NestJS Email Service").
+7. Click the "Generate" button. Google will generate a 16-character app-specific password for you. Use this generated password as the pass value in your .env file
 
 ## License
 
