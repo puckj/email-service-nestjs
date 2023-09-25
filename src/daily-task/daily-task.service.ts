@@ -1,7 +1,7 @@
 import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable } from '@nestjs/common';
 import * as cron from 'node-cron';
-import formattedDate from '../helper/formattedDate'
+import formattedDate from '../helper/formattedDate';
 
 @Injectable()
 export class DailyTaskService {
@@ -13,17 +13,19 @@ export class DailyTaskService {
       },
       {
         scheduled: true,
-        timezone: process.env.SERVER_TZ ? process.env.SERVER_TZ: 'Asia/Bangkok'
-      }
+        timezone: process.env.SERVER_TZ
+          ? process.env.SERVER_TZ
+          : 'Asia/Bangkok',
+      },
     );
   }
 
   private async scheduledSendMail() {
     const emailMessage = {
-        to: process.env.RECIPIENT_EMAIL,
-        subject: process.env.SUBJECT_EMAIL,
-        text: process.env.TEXT_EMAIL,
-      };
+      to: process.env.RECIPIENT_EMAIL,
+      subject: process.env.SUBJECT_EMAIL,
+      text: process.env.TEXT_EMAIL,
+    };
     const utcDate = new Date();
     console.log('Daily task executed at ' + formattedDate(utcDate));
     try {

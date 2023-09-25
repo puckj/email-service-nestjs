@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import formattedDate from './helper/formattedDate'
+import formattedDate from './helper/formattedDate';
 
 async function bootstrap() {
   const LISTENING_PORT = process.env.LISTENING_PORT
