@@ -21,16 +21,30 @@
 </p>
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
+  
 ## Installation
+1. create ```.env``` file by following .env.example
+2. run ```$ yarn install ```
 
-```bash
-$ yarn install
+### cron patterns
 ```
+* * * * * *
+| | | | | |
+| | | | | day of week
+| | | | months
+| | | day of month
+| | hours
+| minutes
+seconds (optional)
+Some sample cron patterns are:
+```
+example
+- ```* * * * * *```	every second
+- ```45 * * * * *```	every minute, on the 45th second
+- ```0 10 * * * *```	every hour, at the start of the 10th minute
+- ```0 */30 9-17 * * *```	every 30 minutes between 9am and 5pm
+- ```0 30 11 * * 1-5```	Monday to Friday at 11:30am
+
 
 ## Running the app
 
